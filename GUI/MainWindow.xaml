@@ -1,0 +1,104 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Project #4 Demo" Height="600" Width="525" Padding="20" FontFamily="tahoma" Background="#ccc" Loaded="Window_Loaded">
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////
+    // MainWindow.xaml - GUI for Project3HelpWPF                         //
+    // ver 1.1                                                           //
+    // Sneha Sarkar, CSE687 - Object Oriented Design, Spring 2018        //
+    // Source: Jim Fawcett                                               //
+    ///////////////////////////////////////////////////////////////////////
+    -->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="82*"/>
+            <ColumnDefinition Width="177*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,-0.333,29.667" Grid.RowSpan="2">
+            <TabItem Header=" Local   ">
+                <local:LocalNavControl x:Name="NavLocal" Loaded="NavLocal_Loaded"></local:LocalNavControl>
+            </TabItem>
+            <TabItem Header=" Remote  ">
+                <local:RemoteNavControl x:Name="NavRemote" Loaded="NavRemote_Loaded"></local:RemoteNavControl>
+            </TabItem>
+            <TabItem Header="Connect">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="18"/>
+                        <ColumnDefinition Width="10.667"/>
+                        <ColumnDefinition Width="106.667"/>
+                        <ColumnDefinition Width="58*"/>
+                        <ColumnDefinition Width="22*"/>
+                        <ColumnDefinition Width="207*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Content="server port: " Grid.ColumnSpan="3" Margin="0,0,0.333,0.667"/>
+                    <TextBox Grid.Row="0" Grid.Column="3" Margin="4.667,5,3.666,4.667" Name="txtMsg3" Text="8080" Grid.ColumnSpan="3" />
+                    <Button Grid.Row="0" Grid.Column="6" Margin="5.334,5,4.666,4.667" Content="connect" Width="80" Click="ConnectButton_Click" />
+                    <Label Grid.Row="1" Grid.Column="0" Content="client port: " Grid.ColumnSpan="3" Margin="0,0.333,0.333,12.667"/>
+                    <TextBox Grid.Row="1" Grid.Column="3" Margin="4.667,5.333,3.666,15.667" Name="txtMsg4" Text="8082" Grid.ColumnSpan="3" />
+                    <TextBlock Grid.Row="1" Name="lstBoxFilesForCheckin6" Grid.ColumnSpan="7" Margin="0,26.333,-0.334,-1" Grid.RowSpan="2"  />
+                </Grid>
+            </TabItem>
+            <TabItem Header=" Query   ">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="47*"/>
+                        <ColumnDefinition Width="56*"/>
+                        <ColumnDefinition Width="39*"/>
+                        <ColumnDefinition Width="270*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+
+                    </Grid.ColumnDefinitions>
+                    
+                    <Label Grid.Row="0" Grid.Column="0" Content="name : " Margin="10,0" />
+                    <TextBox Text="Comm.h" Grid.Row="0" Grid.Column="1" Margin="10,0,9.667,0" Name="FileName" Grid.ColumnSpan="4"  />
+                    <Label Grid.Row="1" Grid.Column="0" Content="description : " Margin="10,0" />
+                    <TextBox Text="file of CIS687" Grid.Row="1" Grid.Column="1" Margin="10,0,9.667,0" Name="FileDescription" Grid.ColumnSpan="4"  />
+                    <Label Grid.Row="2" Grid.Column="0" Content="categories : " Margin="10,0" />
+                    <TextBox Text="first;second" Grid.Row="2" Grid.Column="1"  Margin="10,0,9.667,0" Name="PayloadCategory" Grid.ColumnSpan="4"  />
+                    <Label Grid.Row="3" Grid.Column="0" Content="children : " Margin="10,0" />
+                    <TextBox Text=" " Grid.Row="3" Grid.Column="1"  Margin="10,0,9.667,0" Name="PayloadValue" Grid.ColumnSpan="4"  />
+                    <Label Grid.Row="4" Grid.Column="0" Content="files without parents : " Margin="10,0" />
+                    <TextBox Text="No" Grid.Row="4" Grid.Column="1"  Margin="10,0,9.667,0" Name="Parents" Grid.ColumnSpan="4"  />
+                    <Label Grid.Row="1" Grid.Column="0" Content="versions : " Margin="10,0" />
+                    <TextBox Text="1;2" Grid.Row="5" Grid.Column="1"  Margin="10,0,9.667,0" Name="Versions" Grid.ColumnSpan="4"  />
+                    <Button Grid.Row="6" Grid.Column="0" Width="80" Height="20" Margin="10,1,10,0.333" Click="SearchButton_Click">And Query</Button>
+                    <Button Grid.Row="6" Grid.Column="2" Width="80" Height="20" Margin="9.667,1,5.667,0.333" Click="ORButton_Click" Grid.ColumnSpan="2">OR Query</Button>
+                    <TextBlock Grid.Row="7" Grid.ColumnSpan="5" Name="FileContent" Margin="10,21,9.667,0.333" Grid.RowSpan="2"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header=" About   ">
+                <local:AboutControl></local:AboutControl>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

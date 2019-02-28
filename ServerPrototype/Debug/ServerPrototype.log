@@ -1,0 +1,8 @@
+﻿  ServerPrototype.cpp
+  Version.cpp
+  Checkout.cpp
+  Checkin.cpp
+  Generating Code...
+DateTime.lib(DateTime.obj) : warning LNK4099: PDB 'DateTime.pdb' was not found with 'DateTime.lib(DateTime.obj)' or at 'E:\study material\MS\ms-2ndsem\OOD\project4\final\Project4Demo\Debug\DateTime.pdb'; linking object as if no debug info
+XmlDocument.lib(XmlElement.obj) : warning LNK4099: PDB 'XmlDocument.pdb' was not found with 'XmlDocument.lib(XmlElement.obj)' or at 'E:\study material\MS\ms-2ndsem\OOD\project4\final\Project4Demo\Debug\XmlDocument.pdb'; linking object as if no debug info
+  ServerPrototype.vcxproj -> E:\study material\MS\ms-2ndsem\OOD\project4\final\Project4Demo\Debug\ServerPrototype.exe
